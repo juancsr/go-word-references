@@ -1,3 +1,10 @@
+# Gin dependecies
+gin-bin
+
+# Docker dependencies
+mongo_data
+.env
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
