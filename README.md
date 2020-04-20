@@ -2,7 +2,7 @@
 An API REST service to help you to improve your english vocabulary
 
 # Why in Go?
-Because i was curious about try this framework: https://github.com/gin-gonic/gin
+Because I was curious about try this framework: https://github.com/gin-gonic/gin
 
 # How can i run it?
 There're are three ways for run this project:
