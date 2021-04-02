@@ -1,0 +1,7 @@
+.dockerignore
+tmp
+Dockerfile
+docker-compose.yml
+mongo_data
+go.mod
+go.sum

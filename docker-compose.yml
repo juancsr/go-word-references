@@ -3,7 +3,7 @@ version: '3'
 services:
   db:
     image: mongo:latest
-    container_name: mongodb_backend_develop
+    container_name: go-word-references-db
     environment:
       - MONGO_DATA=/data/db
       - MONGO_LOG_DIR=/var/log/mongodb
@@ -11,12 +11,17 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=${MONGODB_PASSWORD}
       - MONGO_INITDB_DATABASE=words
     volumes:
-      - ./mongo_data:/data/db
+      - mongo_data:/data/db
     ports:
-      - ${DB_PORT}:27017 
-    networks: 
-      - back_end
-      
-networks: 
-  back_end:
-    external: true
+      - ${DB_PORT}:27017
+  
+  app:
+    build: .
+    container_name: go-word-references-app
+    ports:
+      - 9001:8080
+    volumes:
+      - ./:/go/app
+
+volumes:
+  mongo_data:
